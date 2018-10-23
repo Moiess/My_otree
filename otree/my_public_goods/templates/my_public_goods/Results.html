@@ -6,11 +6,11 @@
 {% block content %}
 
     <p>
-        You started with an endowment of {{ Constants.endowment }},
-        of which you contributed {{ player.contribution }}.
-        Your group contributed {{group.total_contribution }},
-        resulting in an individual share of {{ group.individual_share }}.
-        Your profit is therefore {{ player.payoff }}
+        你的初始资金为{{ Constants.endowment }},
+        你这回合贡献了{{ player.contribution }}。
+        你的小组总共贡献了{{group.total_contribution }},
+        从而您本回合收益为{{ group.individual_share }}.
+        因此您的总利润为{{ player.payoff }}
     </p>
 
     {% next_button %}

@@ -15,36 +15,36 @@ SESSION_CONFIGS = [
     {
         'name': 'public_goods',
         'display_name': "Public Goods",
-        'num_demo_participants': 3,
+        'num_demo_participants': 33,
         'app_sequence': ['public_goods', 'payment_info'],
     },
-    {
-        'name': 'guess_two_thirds',
-        'display_name': "Guess 2/3 of the Average",
-        'num_demo_participants': 3,
-        'app_sequence': ['guess_two_thirds', 'payment_info'],
-    },
-    {
-        'name': 'survey',
-        'num_demo_participants': 1,
-        'app_sequence': ['survey', 'payment_info'],
-    },
-    {
-        'name': 'quiz',
-        'num_demo_participants': 1,
-        'app_sequence': ['quiz'],
-    },
-    {
-        'name': 'my_simple_survey',
-        'num_demo_participants': 3,
-        'app_sequence': ['my_simple_survey'],
-    },
-    {
-        'name': 'my_public_goods',
-        'display_name': "My Public Goods (Simple Version)",
-        'num_demo_participants': 3,
-        'app_sequence': ['my_public_goods'],
-    },
+    # {
+    #     'name': 'guess_two_thirds',
+    #     'display_name': "Guess 2/3 of the Average",
+    #     'num_demo_participants': 3,
+    #     'app_sequence': ['guess_two_thirds', 'payment_info'],
+    # },
+    # {
+    #     'name': 'survey',
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['survey', 'payment_info'],
+    # },
+    # {
+    #     'name': 'quiz',
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['quiz'],
+    # },
+    # {
+    #     'name': 'my_simple_survey',
+    #     'num_demo_participants': 3,
+    #     'app_sequence': ['my_simple_survey'],
+    # },
+    # {
+    #     'name': 'my_public_goods',
+    #     'display_name': "公共物品博弈（试验）",
+    #     'num_demo_participants': 3,
+    #     'app_sequence': ['my_public_goods'],
+    # },
 ]
 # see the end of this file for the inactive session configs
 
@@ -54,7 +54,7 @@ SESSION_CONFIGS = [
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'CHY'
 USE_POINTS = True
 
 ROOMS = [

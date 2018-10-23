@@ -11,15 +11,14 @@ This is a one-period public goods game with 3 players.
 
 class Constants(BaseConstants):
     name_in_url = 'public_goods'
-    players_per_group = 3
-    num_rounds = 1
+    players_per_group = 33
+    num_rounds = 10
 
     instructions_template = 'public_goods/Instructions.html'
 
     # """Amount allocated to each player"""
     endowment = c(100)
     multiplier = 2
-
 
 class Subsession(BaseSubsession):
     def vars_for_admin_report(self):
@@ -55,3 +54,5 @@ class Player(BasePlayer):
         min=0, max=Constants.endowment,
         doc="""The amount contributed by the player""",
     )
+    name = models.StringField()
+    number = models.IntegerField()

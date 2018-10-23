@@ -6,13 +6,14 @@
 {% block content%}
 
     <p>
-        This is a public good game with
-        {{ Constants.players_per_group }} players per group,
-        an endowment of {{ Constants.endowment }},
-        and a multiplier of {{ Constants.multiplier }}.
+        这是一个公共物品博弈模型，包括
+        {{ Constants.players_per_group }} 名成员,
+        每个人的初始资金为{{ Constants.endowment }},
+        每回合的乘数为{{ Constants.multiplier }}。
+
     </p>
 
-    {% formfield player.contribution label="How much will you contribute?" %}
+    {% formfield player.contribution label="你会贡献多少钱?" %}
     {% next_button %}
 
 {% endblock %}
