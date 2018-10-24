@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+请输入你的姓名和学号(PS:仅作为记录使用，并不会出现在实验中，更不会另一个参与者看见)
+{% endblock %}
+
+{% block content %}
+    <table class="table-condensed" style="width:500px; margin-top:20px;">
+
+        <tr><td>{% formfields %}<td><tr>
+        <tr><td colspan="2"><hr/></td></tr>
+        <tr><td>{% next_button %}<td><tr>
+    </table>
+    {% include Constants.instructions_template %}
+{% endblock %}
