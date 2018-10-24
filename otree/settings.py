@@ -49,7 +49,7 @@ SESSION_CONFIGS = [
         'name': 'prisoner_test',
         'display_name': "18-10-25 班级实验 PD",
         'num_demo_participants': 2,
-        'app_sequence': ['prisoner_test', 'payment_info'],
+        'app_sequence': ['prisoner_test'],
     },
 ]
 # see the end of this file for the inactive session configs
@@ -60,7 +60,7 @@ SESSION_CONFIGS = [
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'CHY'
+REAL_WORLD_CURRENCY_CODE = 'CNY'
 USE_POINTS = True
 
 ROOMS = [
