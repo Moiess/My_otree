@@ -5,13 +5,13 @@ from otree.api import (
 import random
 
 doc = """
-This is a one-period public goods game with 3 players.
+This is a one-period public goods game with 30 players.
 """
 
 
 class Constants(BaseConstants):
     name_in_url = 'public_goods'
-    players_per_group = 33
+    players_per_group = None
     num_rounds = 10
 
     instructions_template = 'public_goods/Instructions.html'
@@ -41,10 +41,23 @@ class Group(BaseGroup):
     total_contribution = models.CurrencyField()
 
     individual_share = models.CurrencyField()
+    group_number = models.IntegerField()
+    avg_payoff = models.IntegerField()
+
+    def set_group_number(self):
+        self.group_number = len([p.contribution for p in self.get_players()])
+        print(self.group_number)
+
+    def set_avg_payoff(self):
+        self.avg_payoff = sum([p.payoff for p in self.get_players()])/len([p.contribution for p in self.get_players()])
+        print(self.group_number)
 
     def set_payoffs(self):
+
         self.total_contribution = sum([p.contribution for p in self.get_players()])
-        self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
+
+        self.individual_share = self.total_contribution * Constants.multiplier / len([p.contribution for p in self.get_players()])
+
         for p in self.get_players():
             p.payoff = (Constants.endowment - p.contribution) + self.individual_share
 

@@ -18,9 +18,10 @@
 
         <tr><td>本项目总共赚取了：</td><td>{{ total_earnings }}</td></tr>
         <tr><td>你从本项目中赚取了：</td><td>{{ group.individual_share }}</td></tr>
-
+        <tr><td>你的总收益为：</td><td>{{ player.payoff }}</td></tr>
         <tr><td colspan="2"><hr/></td></tr>
-
+        <tr><td>小组平均收益为</td><td>{{ group.avg_payoff }}</td></tr>
+        <tr><td colspan="2"><hr/></td></tr>
         <tr><td>小组其他人分别贡献了：</td><td></td></tr>
         {% for p in player.get_others_in_group %}
             <tr><td></td><td>{{ p.name }}:</td></tr>

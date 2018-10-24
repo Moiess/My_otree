@@ -12,12 +12,12 @@ SESSION_CONFIG_DEFAULTS = {
 }
 
 SESSION_CONFIGS = [
-    {
-        'name': 'public_goods',
-        'display_name': "Public Goods",
-        'num_demo_participants': 33,
-        'app_sequence': ['public_goods', 'payment_info'],
-    },
+    # {
+    #     'name': 'public_goods',
+    #     'display_name': "18-10-25 班级实验 PG",
+    #     'num_demo_participants': 3,
+    #     'app_sequence': ['public_goods', 'payment_info'],
+    # },
     # {
     #     'name': 'guess_two_thirds',
     #     'display_name': "Guess 2/3 of the Average",
@@ -45,6 +45,12 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': 3,
     #     'app_sequence': ['my_public_goods'],
     # },
+    {
+        'name': 'prisoner_test',
+        'display_name': "18-10-25 班级实验 PD",
+        'num_demo_participants': 2,
+        'app_sequence': ['prisoner_test', 'payment_info'],
+    },
 ]
 # see the end of this file for the inactive session configs
 
@@ -58,14 +64,18 @@ REAL_WORLD_CURRENCY_CODE = 'CHY'
 USE_POINTS = True
 
 ROOMS = [
-    {
-        'name': 'econ101',
-        'display_name': 'Econ 101 class',
-        'participant_label_file': '_rooms/econ101.txt',
-    },
+    # {
+    #     'name': 'econ101',
+    #     'display_name': 'Econ 101 class',
+    #     'participant_label_file': '_rooms/econ101.txt',
+    # },
+    # {
+    #     'name': 'live_demo',
+    #     'display_name': 'Room for live demo (no participant labels)',
+    # },
     {
         'name': 'live_demo',
-        'display_name': 'Room for live demo (no participant labels)',
+        'display_name': '实验房间',
     },
 ]
 
@@ -111,10 +121,10 @@ INSTALLED_APPS = ['otree']
 ###     'app_sequence': ['trust', 'payment_info'],
 ### },
 ### {
-###     'name': 'prisoner',
+###     'name': 'prisoner_test',
 ###     'display_name': "Prisoner's Dilemma",
 ###     'num_demo_participants': 2,
-###     'app_sequence': ['prisoner', 'payment_info'],
+###     'app_sequence': ['prisoner_test', 'payment_info'],
 ### },
 ### {
 ###     'name': 'ultimatum',
