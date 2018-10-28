@@ -8,44 +8,44 @@ from otree.currency import Currency
 
 doc = """
 用于2018-10-24班级实验的囚徒困境博弈
+Prisoner Dilemma Game for 2018-10-24 class test
 """
 
 
-class Constants(BaseConstants):
-    name_in_url = 'prisoner_test'
-    players_per_group = 2
-    num_rounds = 100
+class Constants(BaseConstants):    # 常量设置
+    name_in_url = 'prisoner_test'  # 网页名
+    players_per_group = 2          # 每组人数
+    num_rounds = 100               # 回合数
 
     instructions_template = 'prisoner_test/Instructions.html'
 
-    # payoff if 1 player defects and the other cooperates""",
+    # 收益矩阵
     betray_payoff = c(300)
     betrayed_payoff = c(0)
-
-    # payoff if both players cooperate or both defect
     both_cooperate_payoff = c(200)
     both_defect_payoff = c(100)
 
 
-class Subsession(BaseSubsession):
+class Subsession(BaseSubsession):  # 会话设置
     def creating_session(self):
         self.group_randomly()
 
 
-class Group(BaseGroup):
+class Group(BaseGroup):            # 组设置
     pass
 
-class Player(BasePlayer):
-    decision = models.StringField(
+class Player(BasePlayer):                     # 玩家设置
+    decision = models.StringField(            # 选择
         choices=['合作', '不合作'],
         doc="""This player's decision""",
         widget=widgets.RadioSelect
     )
 
     def other_player(self):
-        return self.get_others_in_group()[0]
+        self.participant.vars['name'] = self.in_round(self.round_number == 1).name  # 存在bug
+        return self.get_others_in_group()[0]  # 获得其余组员列表中的第一个
 
-    def set_payoff(self):
+    def set_payoff(self):                     # 构建收益矩阵
         payoff_matrix = {
             '合作':
                 {
@@ -58,28 +58,13 @@ class Player(BasePlayer):
                     '不合作': Constants.both_defect_payoff
                 }
         }
+        # 计算个人收益及个人总收益
         self.payoff = payoff_matrix[self.decision][self.other_player().decision]
         self.cumulative_payoff = sum([p.payoff for p in self.in_all_rounds()])
-        # # 历史记录 未实现！！
-        # self.history_list = []
-        # history_information = []
-        # history_information.append(self.round_number)
-        # history_information.append(self.get_others_in_group())
-        # history_information.append(self.decision)
-        # history_information.append(self.other_player().decision)
-        # self.history_list.append(history_information)
-        #
-        # for i in self.round_number:
-        #     if self.history_list[i-1][0] is self.other_player():
-        #         meet = True
-        #
-    # history_list = models.StringField()
 
-    name = models.StringField(label='你的名字')
-    number = models.IntegerField(label='你的学号')
-    # 计算收益和
-    cumulative_payoff = models.CurrencyField()
-
+    name = models.StringField(label='你的名字')      # 姓名，储存为字符型
+    number = models.IntegerField(label='你的学号')   # 学号，储存为整数型
+    cumulative_payoff = models.CurrencyField()      # 总收益，储存为货币型
 
 #
 

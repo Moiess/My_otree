@@ -19,8 +19,8 @@
 
 {% block content %}
     <p>
-        你本回合匹配的对手是{{ player.get_others_in_group }}{{ player.name }}，你可以记录一下跟ta游戏的结果
-
+        你本回合匹配的对手是{{ others_name }}
+        {% chat %}
     </p>
     <div class="form-group required">
         <table class="table table-bordered text-center" style="width: auto; margin: auto">
@@ -48,7 +48,7 @@
 
     <p>你可以在这里和另一名参与者愉快的聊会天！（但请不要透露任何个人信息，在你选择之后你依然可以跟ta交谈）</p>
 
-    {% chat %}
+
 
 
     {% include Constants.instructions_template %}
