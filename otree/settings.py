@@ -102,9 +102,7 @@ ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 DEBUG = (environ.get('OTREE_PRODUCTION') in {None, '', '0'})
 
 DEMO_PAGE_INTRO_HTML = """
-Here are various games implemented with 
-oTree. These games are open
-source, and you can modify them as you wish.
+右边是可以参加的游戏列表
 """
 
 # don't share this with anybody.

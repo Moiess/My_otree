@@ -42,7 +42,7 @@ class Player(BasePlayer):                     # 玩家设置
     )
 
     def other_player(self):
-        self.participant.vars['name'] = self.in_round(self.round_number == 1).name  # 存在bug
+        # self.participant.vars['name'] = self.in_round(self.round_number == 1).name  # 存在bug
         return self.get_others_in_group()[0]  # 获得其余组员列表中的第一个
 
     def set_payoff(self):                     # 构建收益矩阵

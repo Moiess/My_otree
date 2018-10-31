@@ -4,7 +4,7 @@ from .models import Constants
 
 
 class Introduction(Page):                      # 介绍页面
-    timeout_seconds = 100                      # 时间限制
+    timeout_seconds = 30                      # 时间限制
     timer_text = '将在以下时间后自动继续下一页'   # 设置倒计时显示信息
     def is_displayed(self):                    # 页面显示条件
         return self.round_number == 1
@@ -12,11 +12,11 @@ class Introduction(Page):                      # 介绍页面
 class Decision(Page):                          # 选择界面
     form_model = 'player'                      # 表单形式
     form_fields = ['decision']                 # 表单域
-    def vars_for_template(self):               # 获得对手姓名 存在bug
-        me = self.player
-        oppoent = me.other_player().participant.vars['name']
-        return {'others_name': oppoent}
-    # timeout_seconds = 60                       # 时间限制
+    # def vars_for_template(self):               # 获得对手姓名 存在bug
+    #     me = self.player
+    #     oppoent = me.other_player().participant.vars['name']
+    #     return {'others_name': oppoent}
+    timeout_seconds = 30                       # 时间限制
     timer_text = '请在剩余时间内完成选择，若未选择视为选择合作'  # 倒计时显示信息
     def before_next_page(self):                # 倒计时结束策略
         if self.timeout_happened:
