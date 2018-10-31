@@ -102,7 +102,7 @@ ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 DEBUG = (environ.get('OTREE_PRODUCTION') in {None, '', '0'})
 
 DEMO_PAGE_INTRO_HTML = """
-右边是可以参加的游戏列表
+请点击右上角菜单按钮，选择room->实验房间，进入房间界面后将网页拉到最底下并点击最底下的那个连接，然后请等待实验开始
 """
 
 # don't share this with anybody.
