@@ -2,6 +2,10 @@ from ._builtin import Page, WaitPage
 from otree.api import Currency as c, currency_range
 from .models import Constants
 
+class GroupWaitPage(WaitPage):
+    wait_for_all_groups = True
+    body_text = '正在寻找对手...'
+    title_text = '请稍等(如果出现长时间等待情况请举手示意老师或巡场同学)'
 
 class Introduction(Page):                      # 介绍页面
     timeout_seconds = 30                      # 时间限制
@@ -29,7 +33,7 @@ class ResultsWaitPage(WaitPage):                   # 等待界面
         for p in self.group.get_players():
             p.set_payoff()
     body_text = '另一位参与者正在选择……'             # 显示信息
-    title_text = '请稍等'
+    title_text = '请稍等(如果出现长时间等待情况请举手示意老师或巡场同学)'
 
 class Results(Page):                               # 结果页面
     def vars_for_template(self):                   # 个人选择（大神写的码）
@@ -54,6 +58,7 @@ class Information(Page):
 
 
 page_sequence = [
+    GroupWaitPage,
     Introduction,
     Information,
     Decision,
