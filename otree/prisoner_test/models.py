@@ -7,8 +7,8 @@ from otree.api import (
 from otree.currency import Currency
 
 doc = """
-用于2018-10-24班级实验的囚徒困境博弈
-Prisoner Dilemma Game for 2018-10-24 class test
+囚徒困境博弈
+Prisoner Dilemma Game
 """
 
 

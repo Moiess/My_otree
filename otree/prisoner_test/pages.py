@@ -4,7 +4,7 @@ from .models import Constants
 
 class GroupWaitPage(WaitPage):
     wait_for_all_groups = True
-    body_text = '正在寻找对手...'
+    body_text = '正在等待所有人入场...'
     title_text = '请稍等(如果出现长时间等待情况请举手示意老师或巡场同学)'
 
 class Introduction(Page):                      # 介绍页面
