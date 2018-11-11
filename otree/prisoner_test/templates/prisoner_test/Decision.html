@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    第{{ player.round_number }}回合，请与另一位参与者交流一下再做出选择吧
+    第{{ player.round_number }}回合
 {% endblock %}
 
 {% block styles %}
@@ -18,6 +18,9 @@
 {% endblock %}
 
 {% block content %}
+    <p>你本回合的对手是{{ others_name }},
+    请与ta交流一下再做出选择吧
+    </p>
     <p>
         {% chat %}
     </p>
@@ -45,7 +48,7 @@
         </table>
     </div>
 
-    <p>你可以在这里和另一名参与者愉快的聊会天！（但请不要透露任何个人信息，在你选择之后你依然可以跟ta交谈）</p>
+    <p>你可以在这里和ta愉快的聊会天！（在你选择之后你依然可以跟ta交谈）</p>
 
 
 
